@@ -1,36 +1,34 @@
---Complete the queries below to insert data into the tables & retrieving the first records from the first 3 tables.
-
 -- Inserting Data into Doctors Table
 INSERT INTO Doctors (DoctorID, Name, Specialization, ContactNumber, Email) VALUES
-(1, 'Dr. John Smith', 'Cardiology', '1234567890', 'john.smith@hospital.com'),
-(2, 'Dr. Lisa Brown', 'Neurology', '0987654321', 'lisa.brown@hospital.com');
+(1, 'Dr. Rajesh Kumar', 'Cardiology', '9876501234', 'rajesh.kumar@hospital.in'),
+(2, 'Dr. Meera Reddy', 'Pediatrics', '9823456789', 'meera.reddy@hospital.in');
 
 -- Inserting Data into Patients Table
 INSERT INTO Patients (PatientID, Name, DOB, Gender, ContactNumber, Address) VALUES
-(1, 'Alice Johnson', '1990-05-21', 'Female', '1112223333', '123 Main St'),
-(2, 'Bob Martin', '1985-08-14', 'Male', '4445556666', '456 Elm St');
+(1, 'Vikram Singh', '1992-07-15', 'Male', '9123456780', '45 Brigade Road, Bengaluru'),
+(2, 'Neha Gupta', '1988-12-05', 'Female', '9988776655', 'B-12, Vasant Kunj, New Delhi');
 
 -- Inserting Data into Appointments Table
 INSERT INTO Appointments (AppointmentID, PatientID, DoctorID, AppointmentDate, Status) VALUES
-(1, 1, 1, '2025-02-15', 'Scheduled'),
-(2, 2, 2, '2025-02-16', 'Completed');
+(1, 1, 1, '2026-08-01', 'Scheduled'),
+(2, 2, 2, '2026-08-05', 'Completed');
 
 -- Inserting Data into Treatments Table
 INSERT INTO Treatments (TreatmentID, PatientID, DoctorID, Diagnosis, TreatmentDescription, TreatmentDate) VALUES
-(1,1,1, 'Hypertension', 'Prescribed medication', '2025-02-15'),
-(2, 2, 2, 'Migraine', 'MRI Scan and medications', '2025-02-16');
+(1, 1, 1, 'Arrhythmia', 'ECG and prescribed beta-blockers', '2026-08-01'),
+(2, 2, 2, 'Viral Fever', 'Prescribed antipyretics and rest', '2026-08-05');
 
--- Inserting Data into MedicalRecords Table
-INSERT INTO MedicalRecords (TreatmentID, PatientID, TreatmentID, Notes) VALUES
-(1, 1, 1, 'Patient responding well to treatment'),
-(2, 2, 2, 'Further evaluation required');
+-- Inserting Data into MedicalRecords Table 
+INSERT INTO MedicalRecords (RecordID, PatientID, TreatmentID, Notes) VALUES
+(1, 1, 1, 'Patient advised dietary changes and regular monitoring'),
+(2, 2, 2, 'Fever subsiding, advised continuous hydration');
 
 -- Inserting Data into Billing Table
 INSERT INTO Billing (BillID, PatientID, TreatmentID, Amount, BillDate, Status) VALUES
-(1, 1, 1, 200.00, '2025-02-15', 'Paid'),
-(2, 2, 2, 500.00, '2025-02-16', 'Unpaid');
+(1, 1, 1, 1500.00, '2026-08-01', 'Unpaid'),
+(2, 2, 2, 800.00, '2026-08-05', 'Paid');
 
---Now write the queries for retrieving the first records from the first three tables (Doctors, Patients, Appointments).
+-- Now write the queries for retrieving the first records from the first three tables (Doctors, Patients, Appointments).
 
 SELECT * FROM Doctors
 LIMIT 1;
